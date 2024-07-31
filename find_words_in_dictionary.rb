@@ -20,19 +20,19 @@ def find_words_in_dictionary(input_string, dict)
   end
 
   # .inspect convers the array to an esy readable string in one line like ["ate", "eat", "tea"]
-  return result.inspect
+  result.inspect
 end
 
 # Helper method to create character count hash
 def get_word_count(word)
   # Use with_object method to create the character count hash. You can also create using normal loop structure. I like one liners, so created this way.
-  return word.each_char.with_object(Hash.new(0)) { |char, count| count[char] += 1 }
+  word.each_char.with_object(Hash.new(0)) { |char, count| count[char] += 1 }
 end
 
 # Helper method to compare the hashes. 
 # .all? will filter the [k,v] pair in the word_count based on the char in the input_string_count >= 1
 def contains_input_word_chars?(input_string_count, word_count)
-  return word_count.all? { |char, count| input_string_count[char] >= 1 }
+  word_count.all? { |char, count| input_string_count[char] >= 1 }
 end
 
 # Tests
